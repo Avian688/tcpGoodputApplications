@@ -1,0 +1,3 @@
+package tcpgoodputapplications;
+
+@license(LGPL);
