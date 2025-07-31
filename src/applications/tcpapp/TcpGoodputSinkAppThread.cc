@@ -14,6 +14,7 @@
 // 
 
 #include "TcpGoodputSinkAppThread.h"
+#include <cmath>
 
 Define_Module(TcpGoodputSinkAppThread);
 
@@ -57,7 +58,7 @@ void TcpGoodputSinkAppThread::established() {
 
     EV_TRACE << "lastGoodputTime value set at: " << simTime() << std::endl;
 
-    scheduleAt(simTime() + goodputInterval, goodputTimer);
+    scheduleAt(std::ceil(simTime().dbl()), goodputTimer);
 
 }
 
